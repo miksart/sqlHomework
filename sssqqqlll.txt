@@ -1,0 +1,69 @@
+﻿SELECT player,City FROM college;
+***************************
+
+SELECT Orders.OrderID, players.playerName
+FROM Orders
+INNER JOIN players ON Orders.playerID = players.playerID;
+
+
+SELECT players.playerName, Orders.OrderID
+FROM players
+LEFT JOIN Orders ON players.playerID = Orders.playerID
+ORDER BY players.playerName;
+
+
+SELECT Orders.OrderID, player.LastName, player.FirstName
+FROM Orders
+RIGHT JOIN player ON Orders.EmployeeID = player.EmployeeID
+ORDER BY Orders.OrderID;
+
+SELECT Orders.OrderID, players.playerName, Orders.OrderDate
+FROM Orders
+INNER JOIN players ON Orders.playerID=players.playerID;
+**********************************************************
+UPDATE player
+SET ContactName='Rasul'
+WHERE Country='afghanestan';
+
+
+
+DELETE FROM player WHERE playerName='iman shire';
+
+
+
+INSERT INTO players (playerName, ContactName, Address, City, PostalCode, Country)
+VALUES ('Cardinal', 'Tom B. Erichsen', 'Skagen 21', 'Stavanger', '4006', 'Norway');
+*******************
+
+SELECT SupplierName
+FROM Suppliers
+WHERE EXISTS (SELECT ProductName FROM Products WHERE Products.SupplierID = Suppliers.supplierID AND Price < 20);
+*******************************************************
+
+SELECT COUNT(score)
+FROM table_name;
+***************************************
+
+SELECT score(s)
+FROM table_name
+GROUP BY score(s)
+**********************************************
+
+SELECT score(s)
+FROM table_name
+HAVING condition;
+*******************************************************
+
+
+
+
+
+
+
+
+
+
+
+
+
+
